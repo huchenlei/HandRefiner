@@ -5,22 +5,22 @@ import numpy as np
 from .depth_preprocessor import Preprocessor
 
 import torchvision.models as models
-from MeshGraphormer.src.modeling.bert import BertConfig, Graphormer
-from MeshGraphormer.src.modeling.bert import Graphormer_Hand_Network as Graphormer_Network
-from MeshGraphormer.src.modeling._mano import MANO, Mesh
-from MeshGraphormer.src.modeling.hrnet.hrnet_cls_net_gridfeat import get_cls_net_gridfeat
-from MeshGraphormer.src.modeling.hrnet.config import config as hrnet_config
-from MeshGraphormer.src.modeling.hrnet.config import update_config as hrnet_update_config
-import MeshGraphormer.src.modeling.data.config as cfg
-from MeshGraphormer.src.datasets.build import make_hand_data_loader
+from graphormer.modeling.bert import BertConfig, Graphormer
+from graphormer.modeling.bert import Graphormer_Hand_Network as Graphormer_Network
+from graphormer.modeling._mano import MANO, Mesh
+from graphormer.modeling.hrnet.hrnet_cls_net_gridfeat import get_cls_net_gridfeat
+from graphormer.modeling.hrnet.config import config as hrnet_config
+from graphormer.modeling.hrnet.config import update_config as hrnet_update_config
+import graphormer.modeling.data.config as cfg
+from graphormer.datasets.build import make_hand_data_loader
 
-from MeshGraphormer.src.utils.logger import setup_logger
-from MeshGraphormer.src.utils.comm import synchronize, is_main_process, get_rank, get_world_size, all_gather
-from MeshGraphormer.src.utils.miscellaneous import mkdir, set_seed
-from MeshGraphormer.src.utils.metric_logger import AverageMeter
+from graphormer.utils.logger import setup_logger
+from graphormer.utils.comm import synchronize, is_main_process, get_rank, get_world_size, all_gather
+from graphormer.utils.miscellaneous import mkdir, set_seed
+from graphormer.utils.metric_logger import AverageMeter
 
-from MeshGraphormer.src.utils.metric_pampjpe import reconstruction_error
-from MeshGraphormer.src.utils.geometric_layers import orthographic_projection
+from graphormer.utils.metric_pampjpe import reconstruction_error
+from graphormer.utils.geometric_layers import orthographic_projection
 from argparse import Namespace
 from pathlib import Path
 import cv2
